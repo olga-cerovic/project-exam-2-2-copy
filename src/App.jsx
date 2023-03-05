@@ -1,12 +1,11 @@
 import React, { createContext, useEffect, useState } from "react";
-import { Box } from "@mui/material";
 import { RouterProvider } from "react-router-dom";
-import styles from "./components/loginForm/LoginForm.module.css";
-
-import { otherRoutes, protectedRoutes } from "./routes";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Box } from "@mui/material";
+import { otherRoutes, protectedRoutes } from "./routes";
 import { fetchProfile } from "./utils";
+import styles from "./components/loginForm/LoginForm.module.css";
 
 export const AuthenticationContext = createContext();
 

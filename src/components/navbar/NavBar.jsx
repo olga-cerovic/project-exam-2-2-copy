@@ -1,19 +1,19 @@
 import * as React from "react";
+import { NavLink, Outlet } from "react-router-dom";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Drawer from "@mui/material/Drawer";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import MailIcon from "@mui/icons-material/Mail";
+import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import Toolbar from "../toolbar/Toolbar";
-import { NavLink, Outlet } from "react-router-dom";
-// import styles from "./NavBar.module.css";
+import styles from "./NavBar.module.css";
 
 const drawerWidth = 240;
 const menuItems = [
@@ -39,10 +39,14 @@ function NavBar(props) {
           sx={{ backgroundColor: "#fcfcfc" }}
         >
           <ListItemButton>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            <ListItemIcon sx={{ color: "#414141" }}>
+              {index % 2 === 0 ? <AccountBoxIcon /> : <MailIcon />}
             </ListItemIcon>
-            <NavLink to={menuItem.link}>
+            <NavLink
+              to={menuItem.link}
+              sx={{ color: "#414141" }}
+              className={styles.activeLink}
+            >
               <ListItemText primary={menuItem.name} />
             </NavLink>
           </ListItemButton>
@@ -117,6 +121,7 @@ function NavBar(props) {
         <Box
           component="main"
           sx={{
+            marginTop: "70px",
             flexGrow: 1,
             p: 3,
             width: { sm: `calc(100% - ${drawerWidth}px)` },

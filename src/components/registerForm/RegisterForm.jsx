@@ -1,11 +1,11 @@
 import { useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
+import { Form } from "react-bootstrap";
+import { toast } from "react-toastify";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { BASE_URL, REGISTER_PATH } from "../../api";
 import axios from "axios";
-import { Form } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { BASE_URL, REGISTER_PATH } from "../../api";
 import styles from "./RegisterForm.module.css";
 
 const schema = yup.object().shape({

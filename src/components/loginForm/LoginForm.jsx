@@ -1,13 +1,13 @@
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
+import { Form } from "react-bootstrap";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { BASE_URL, LOGIN_PATH } from "../../api";
 import axios from "axios";
-import { useContext, useState } from "react";
-import { Form } from "react-bootstrap";
 import { AuthenticationContext } from "../../App";
+import { BASE_URL, LOGIN_PATH } from "../../api";
 import styles from "./LoginForm.module.css";
-import { Link, useNavigate } from "react-router-dom";
 
 const schema = yup.object().shape({
   email: yup

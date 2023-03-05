@@ -1,5 +1,6 @@
-import { AppBar, IconButton } from "@mui/material";
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Typography from "@mui/material/Typography";
 import MenuItem from "@mui/material/MenuItem";
@@ -8,7 +9,6 @@ import Menu from "@mui/material/Menu";
 import { Toolbar as MuiToolbar } from "@mui/material";
 import { AuthenticationContext } from "../../App";
 import styles from "./Toolbar.module.css";
-import { useNavigate } from "react-router-dom";
 
 function Toolbar(props) {
   const { handleDrawerToggle } = props;
@@ -40,6 +40,8 @@ function Toolbar(props) {
   return (
     <MuiToolbar
       sx={{
+        position: "fixed",
+        width: "100%",
         boxShadow: 5,
         backgroundColor: "#533ADA",
         zIndex: 1201,

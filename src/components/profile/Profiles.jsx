@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
-import axios from "axios";
-import { BASE_URL, PROFILE_PATH } from "../../api";
 import { Link } from "react-router-dom";
-import styles from "./Profiles.module.css";
+import axios from "axios";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { BASE_URL, PROFILE_PATH } from "../../api";
+import styles from "./Profiles.module.css";
 
-function Profiles() {
+function Profiles(props) {
   const [profiles, setProfiles] = React.useState();
+  const { title } = props;
 
   async function getAllProfiles() {
     try {
@@ -27,15 +28,19 @@ function Profiles() {
 
   return (
     <div>
-      <h3 className={styles.allProfiles}>All Profiles</h3>
+      <h3 className={styles.allProfiles}>{title ?? "All Profiles"}</h3>
       <ul>
         {profiles?.map((profile) => (
           <li key={profile.name}>
-            <AccountCircleIcon sx={{ marginRight: "2rem" }} />
+            <AccountCircleIcon
+              sx={{
+                marginRight: "1.4rem",
+                fontSize: "3.5rem",
+              }}
+            />
             <Link to={`/profiles/${profile.name}`} className={styles.link}>
               {profile.name}
             </Link>
-            {/* <button onClick={() => handleDelete(profile.id)}>DELETE</button> */}
           </li>
         ))}
       </ul>

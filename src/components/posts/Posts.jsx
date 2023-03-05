@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
-import axios from "axios";
-import { BASE_URL, POSTS_PATH } from "../../api";
 import { Link } from "react-router-dom";
-import styles from "./Posts.module.css";
 import { toast } from "react-toastify";
-import CommentForm from "./CommentForm";
-import PostForm from "./PostForm";
+import axios from "axios";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
+import { BASE_URL, POSTS_PATH } from "../../api";
+import CommentForm from "./CommentForm";
+import PostForm from "./PostForm";
+import styles from "./Posts.module.css";
 
 function Posts() {
   const [posts, setPosts] = React.useState();

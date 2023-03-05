@@ -1,12 +1,12 @@
 import { Form } from "react-bootstrap";
-import * as yup from "yup";
-import axios from "axios";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { BASE_URL, POSTS_PATH } from "../../api";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import styles from "./CommentForm.module.css";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import axios from "axios";
 import CommentIcon from "@mui/icons-material/Comment";
+import { BASE_URL, POSTS_PATH } from "../../api";
+import styles from "./CommentForm.module.css";
 
 const schema = yup.object().shape({
   body: yup.string().required("Please write a comment"),

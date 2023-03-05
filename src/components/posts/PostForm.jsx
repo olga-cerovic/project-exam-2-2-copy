@@ -1,18 +1,16 @@
 import React, { useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { useNavigate, useParams } from "react-router-dom";
 import { Form } from "react-bootstrap";
+import { toast } from "react-toastify";
 import { BASE_URL, POSTS_PATH } from "../../api";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
-import { useForm } from "react-hook-form";
-
-import styles from "./Posts.module.css";
-import { useNavigate, useParams } from "react-router-dom";
-import { toast } from "react-toastify";
-
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
 import TocIcon from "@mui/icons-material/Toc";
+import styles from "./Posts.module.css";
 
 const schema = yup.object().shape({
   title: yup.string().required("Please enter title"),
@@ -20,7 +18,6 @@ const schema = yup.object().shape({
   media: yup.string().nullable(),
 });
 
-// ************ ADD TAGS AND MEDIA FIELDS **********************
 function PostForm(props) {
   const navigate = useNavigate();
   const params = useParams();
@@ -85,12 +82,12 @@ function PostForm(props) {
       <Form onSubmit={handleSubmit(onSubmit)} className={styles.container}>
         <h2>{props.edit ? "Edit Post" : "Create Post"}</h2>
         <div className={styles.linkContainer}>
+          {errors.title && <div>{errors.title.message}</div>}
           <Form.Control
             className={styles.input}
             placeholder="Type in title"
             {...register("title")}
           />
-          {errors.title && <div>{errors.title.message}</div>}
 
           <Form.Control
             as="textarea"

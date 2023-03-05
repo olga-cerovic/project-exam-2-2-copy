@@ -77,7 +77,7 @@ function ImageUpload(props) {
         },
       }}
     >
-      <PhotoCameraIcon sx={{ opacity: "1" }} className={styles.icon} />
+      <PhotoCameraIcon className={styles.icon} />
       <input onChange={handleCapture} hidden accept="image/*" type="file" />
     </Button>
   );
