@@ -1,0 +1,63 @@
+.listContainer {
+  list-style: none;
+  box-shadow: 0px 0px 25px -15px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 25px -15px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 25px -15px rgba(0, 0, 0, 0.75);
+  margin-bottom: 3rem;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.allProfiles {
+  margin-bottom: 2rem;
+}
+
+.userPage {
+  text-align: center;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  display: inline;
+  font-weight: 600;
+}
+
+.people {
+  margin-top: 3rem;
+  text-align: left;
+}
+
+.heading {
+  margin-bottom: 2rem;
+}
+
+.linkContainer {
+  margin-bottom: 1.5rem;
+}
+
+li {
+  margin-bottom: 1rem;
+  background-color: #fcfcfc;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.follow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  background-color: #533ada;
+  border: none;
+  color: #fff;
+  width: 200px;
+  padding: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+  border-radius: 10px;
+}
